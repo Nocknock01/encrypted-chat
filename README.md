@@ -26,3 +26,25 @@ encrypted_chat/
 ├── crypto_utils.py        # Handles encryption/decryption
 ├── generate_key.py        # One-time key generator
 └── key.key                # Generated encryption key (DO NOT share)
+
+ How to Run
+Step 1: Generate the encryption key
+python generate_key.py
+
+Step 2: Start the server
+python server.py
+You should see:
+Server is running...
+Connected with ('127.0.0.1', 54321)
+
+Step 3: Start one or more clients (in separate terminals)
+python client.py
+
+How It Works
+All clients and the server share the same encryption key stored in key.key.
+
+Messages are encrypted by the sender and decrypted by each client.
+
+Server does not decrypt messages — it only forwards encrypted data.
+
+
